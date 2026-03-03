@@ -18,32 +18,7 @@
 - **Styling**: Vanilla CSS (Modern CSS variables & Grid/Flexbox)
 - **Icons**: Fluent Emoji & Custom SVG
 
-## 🛠️ Getting Started
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/rynxx9/SSH-TERMINAL-CHAT-APP.git
-   cd SSH-TERMINAL-CHAT-APP
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🎨 Design Philosophy
 
