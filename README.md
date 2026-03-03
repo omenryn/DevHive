@@ -1,16 +1,54 @@
-# React + Vite
+# 🐝 DevHive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DevHive** is a modern, clean, and responsive community web application designed specifically for **Moroccan developers and students**. Inspired by platforms like Reddit, it provides a space for tech enthusiasts to share knowledge, discuss local market trends, and build a thriving community.
 
-Currently, two official plugins are available:
+![DevHive Hero](file:///C:/Users/RAYAN/.gemini/antigravity/brain/c556a112-2d0c-41d4-95aa-99b1b13497b4/devhive_hero_vibe_1772580582220.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Reddit-style Feed**: Interactive post cards with upvote/downvote functionality and engagement metrics.
+- **Glassmorphism UI**: A premium, modern look with soft tones, blurred surfaces, and elegant typography.
+- **Responsive Design**: Mobile-first architecture that works seamlessly across desktops, tablets, and smartphones.
+- **Localized Context**: Categorized content and tags tailored for the Moroccan tech ecosystem (e.g., #MoroccoTech, #DarijaDev).
+- **Infinite Potential**: Modular React architecture optimized for adding comment threads, user profiles, and real-time notifications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (Modern CSS variables & Grid/Flexbox)
+- **Icons**: Fluent Emoji & Custom SVG
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rynxx9/SSH-TERMINAL-CHAT-APP.git
+   cd SSH-TERMINAL-CHAT-APP
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🎨 Design Philosophy
+
+DevHive prioritizes **Visual Excellence** and **User Engagement**. The interface uses a minimalist palette (Off-white, Slate, and Moroccan Teal) to reduce cognitive load while maintaining a premium, tech-oriented vibe.
+
+---
+
+*Built with ❤️ for the Moroccan Developer Community.*
