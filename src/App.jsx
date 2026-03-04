@@ -97,10 +97,10 @@ function App() {
     <>
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-10 py-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <Sidebar />
+      <main className="w-full px-4 md:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+        <Sidebar className="lg:col-span-3" />
 
-        <section className="col-span-1 lg:col-span-7 space-y-6">
+        <section className="col-span-1 lg:col-span-6 space-y-6">
           {/* Create Post Mock */}
           <div className="bg-white/60 dark:bg-primary/5 backdrop-blur-md border border-white/40 dark:border-primary/20 shadow-sm rounded-xl p-4 flex gap-4 items-center">
             <div className="h-10 w-10 rounded-full bg-primary/20 shrink-0 overflow-hidden">
@@ -120,7 +120,7 @@ function App() {
           ))}
         </section>
 
-        <RightSidebar />
+        <RightSidebar className="lg:col-span-3" />
       </main>
     </>
   );

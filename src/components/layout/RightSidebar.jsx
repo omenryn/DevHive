@@ -1,8 +1,8 @@
 import React from 'react';
 
-const RightSidebar = () => {
+const RightSidebar = ({ className = "" }) => {
     return (
-        <aside className="hidden lg:block lg:col-span-3 space-y-6">
+        <aside className={`hidden lg:block space-y-6 ${className}`}>
             {/* Popular Communities */}
             <div className="bg-white/60 dark:bg-primary/5 backdrop-blur-md border border-white/40 dark:border-primary/20 shadow-sm rounded-xl overflow-hidden">
                 <div className="p-4 border-b border-white/40 dark:border-primary/20 bg-primary/5 text-center">
