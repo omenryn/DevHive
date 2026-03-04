@@ -17,6 +17,11 @@ const PostCard = ({ post }) => {
                     <span className="time">• {post.time}</span>
                 </div>
                 <h2 className="post-title">{post.title}</h2>
+                {post.image && (
+                    <div className="post-image-container">
+                        <img src={post.image} alt="Post content" className="post-image" />
+                    </div>
+                )}
                 <p className="post-excerpt">{post.excerpt}</p>
                 <div className="post-actions">
                     <button>💬 {post.comments} Comments</button>
