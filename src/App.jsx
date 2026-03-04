@@ -34,6 +34,56 @@ const MOCK_POSTS = [
     time: "10h ago",
     votes: 890,
     comments: 112
+  },
+  {
+    id: 4,
+    title: "Is anyone going to DevFest Casablanca this year?",
+    excerpt: "Just got my ticket for DevFest! Looking forward to the sessions on Web3 and Cloud Native. Who else is joining? Let's meet up!",
+    author: "saad_cloud",
+    tag: "#events",
+    time: "12h ago",
+    votes: 420,
+    comments: 65
+  },
+  {
+    id: 5,
+    title: "How I landed my first remote job from Morocco paying in USD 🚀",
+    excerpt: "Story time! It took me 6 months of applying, countless rejections, and refining my portfolio. Here is the exact strategy I used and the platforms that worked for me...",
+    author: "laila_remote",
+    tag: "#career",
+    time: "1d ago",
+    votes: 1250,
+    comments: 310
+  },
+  {
+    id: 6,
+    title: "Next.js vs Remix - What's the best choice for e-commerce?",
+    excerpt: "I'm building a new online store for a local client. I've used Next.js extensively but I keep hearing good things about Remix's data loading. Thoughts?",
+    author: "ilyas_frontend",
+    tag: "#webdev",
+    time: "1d ago",
+    votes: 215,
+    comments: 54
+  },
+  {
+    id: 7,
+    title: "Starting a new OSS project: Darija NLP toolkit",
+    excerpt: "Salam everyone! I'm starting an open-source project to build NLP tools specifically tailored for Moroccan Darija. Looking for contributors who are passionate about Python and Machine Learning.",
+    author: "asmaa_data",
+    tag: "#opensource",
+    time: "2d ago",
+    votes: 680,
+    comments: 89
+  },
+  {
+    id: 8,
+    title: "Best co-working spaces in Rabat for software engineers?",
+    excerpt: "Working from home is getting a bit lonely. Can anyone recommend some good co-working spaces in Rabat with reliable fiber optics and good coffee?",
+    author: "mehdi_backend",
+    tag: "#networking",
+    time: "3d ago",
+    votes: 95,
+    comments: 21
   }
 ];
 
