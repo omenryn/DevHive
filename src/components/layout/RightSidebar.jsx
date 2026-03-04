@@ -14,7 +14,7 @@ const RightSidebar = () => {
                             <span className="font-bold text-slate-400">1</span>
                             <div className="w-8 h-8 rounded-full bg-indigo-500"></div>
                             <div>
-                                <p className="text-sm font-bold">r/Frontend</p>
+                                <p className="text-sm font-bold">ma/Frontend</p>
                                 <p className="text-[10px] text-slate-500">2.4k new today</p>
                             </div>
                         </div>
@@ -25,7 +25,7 @@ const RightSidebar = () => {
                             <span className="font-bold text-slate-400">2</span>
                             <div className="w-8 h-8 rounded-full bg-amber-500"></div>
                             <div>
-                                <p className="text-sm font-bold">r/Python_MA</p>
+                                <p className="text-sm font-bold">ma/Python_MA</p>
                                 <p className="text-[10px] text-slate-500">1.8k new today</p>
                             </div>
                         </div>
@@ -36,7 +36,7 @@ const RightSidebar = () => {
                             <span className="font-bold text-slate-400">3</span>
                             <div className="w-8 h-8 rounded-full bg-emerald-500"></div>
                             <div>
-                                <p className="text-sm font-bold">r/OpenSource</p>
+                                <p className="text-sm font-bold">ma/OpenSource</p>
                                 <p className="text-[10px] text-slate-500">900 new today</p>
                             </div>
                         </div>

@@ -9,11 +9,11 @@ const PostCard = ({ post }) => {
                 {/* Voting Column */}
                 <div className="w-12 bg-slate-50/50 dark:bg-primary/5 flex flex-col items-center py-4 gap-1">
                     <button className="text-slate-400 hover:text-primary" onClick={() => setVotes(v => v + 1)}>
-                        <span className="material-symbols-outlined font-bold">arrow_upward</span>
+                        <span className="material-symbols-outlined text-3xl leading-none">expand_less</span>
                     </button>
                     <span className="text-sm font-bold">{votes > 999 ? (votes / 1000).toFixed(1) + 'k' : votes}</span>
                     <button className="text-slate-400 hover:text-red-400" onClick={() => setVotes(v => v - 1)}>
-                        <span className="material-symbols-outlined text-lg">arrow_downward</span>
+                        <span className="material-symbols-outlined text-3xl leading-none">expand_more</span>
                     </button>
                 </div>
                 <div className="flex-1 p-4">

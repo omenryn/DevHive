@@ -12,7 +12,7 @@ const MOCK_POSTS = [
     excerpt: "Salam developers! I've been seeing a lot of questions about which stack to choose for local startups. React remains dominant because of the large pool of talent and mature ecosystem...",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000&auto=format&fit=crop",
     author: "yassine_dev",
-    tag: "#react_js",
+    tag: "ma/react_js",
     time: "2h ago",
     votes: 342,
     comments: 42
@@ -22,7 +22,7 @@ const MOCK_POSTS = [
     title: "Best resources to learn Flutter in Darija?",
     excerpt: "I'm looking for YouTube channels or courses that explain mobile development in our local language. Any recommendations?",
     author: "noura_codes",
-    tag: "#flutter",
+    tag: "ma/flutter",
     time: "5h ago",
     votes: 156,
     comments: 28
@@ -33,7 +33,7 @@ const MOCK_POSTS = [
     excerpt: "From UM6P initiatives to private startups in Casablanca, AI is taking off. Here's what you need to know about current opportunities and research centers...",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
     author: "omar_tech",
-    tag: "#ai_morocco",
+    tag: "ma/ai_morocco",
     time: "10h ago",
     votes: 890,
     comments: 112
@@ -43,7 +43,7 @@ const MOCK_POSTS = [
     title: "Is anyone going to DevFest Casablanca this year?",
     excerpt: "Just got my ticket for DevFest! Looking forward to the sessions on Web3 and Cloud Native. Who else is joining? Let's meet up!",
     author: "saad_cloud",
-    tag: "#events",
+    tag: "ma/events",
     time: "12h ago",
     votes: 420,
     comments: 65
@@ -54,7 +54,7 @@ const MOCK_POSTS = [
     excerpt: "Story time! It took me 6 months of applying, countless rejections, and refining my portfolio. Here is the exact strategy I used and the platforms that worked for me...",
     image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1000&auto=format&fit=crop",
     author: "laila_remote",
-    tag: "#career",
+    tag: "ma/career",
     time: "1d ago",
     votes: 1250,
     comments: 310
@@ -64,7 +64,7 @@ const MOCK_POSTS = [
     title: "Next.js vs Remix - What's the best choice for e-commerce?",
     excerpt: "I'm building a new online store for a local client. I've used Next.js extensively but I keep hearing good things about Remix's data loading. Thoughts?",
     author: "ilyas_frontend",
-    tag: "#webdev",
+    tag: "ma/webdev",
     time: "1d ago",
     votes: 215,
     comments: 54
@@ -75,7 +75,7 @@ const MOCK_POSTS = [
     excerpt: "Salam everyone! I'm starting an open-source project to build NLP tools specifically tailored for Moroccan Darija. Looking for contributors who are passionate about Python and Machine Learning.",
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop",
     author: "asmaa_data",
-    tag: "#opensource",
+    tag: "ma/opensource",
     time: "2d ago",
     votes: 680,
     comments: 89
@@ -85,7 +85,7 @@ const MOCK_POSTS = [
     title: "Best co-working spaces in Rabat for software engineers?",
     excerpt: "Working from home is getting a bit lonely. Can anyone recommend some good co-working spaces in Rabat with reliable fiber optics and good coffee?",
     author: "mehdi_backend",
-    tag: "#networking",
+    tag: "ma/networking",
     time: "3d ago",
     votes: 95,
     comments: 21

@@ -22,15 +22,15 @@ const Sidebar = () => {
                 <div className="space-y-1">
                     <a className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-primary/5 text-sm" href="#">
                         <span className="w-6 h-6 rounded bg-emerald-500/20 text-emerald-500 flex items-center justify-center text-xs font-bold">W</span>
-                        <span>r/WebDev_MA</span>
+                        <span>ma/WebDev_MA</span>
                     </a>
                     <a className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-primary/5 text-sm" href="#">
                         <span className="w-6 h-6 rounded bg-orange-500/20 text-orange-500 flex items-center justify-center text-xs font-bold">A</span>
-                        <span>r/AI_Morocco</span>
+                        <span>ma/AI_Morocco</span>
                     </a>
                     <a className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-primary/5 text-sm" href="#">
                         <span className="w-6 h-6 rounded bg-blue-500/20 text-blue-500 flex items-center justify-center text-xs font-bold">J</span>
-                        <span>r/JobHunting</span>
+                        <span>ma/JobHunting</span>
                     </a>
                 </div>
             </div>
