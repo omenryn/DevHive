@@ -94,7 +94,14 @@ const MOCK_POSTS = [
 
 function App() {
   return (
-    <>
+    <div className="relative min-h-screen">
+      {/* Background Gradients */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/30 dark:bg-primary/20 blur-[120px]"></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-blue-400/20 dark:bg-blue-500/10 blur-[120px]"></div>
+        <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-purple-400/20 dark:bg-purple-600/10 blur-[100px]"></div>
+      </div>
+
       <Navbar />
 
       <main className="w-full px-4 md:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
@@ -122,7 +129,7 @@ function App() {
 
         <RightSidebar className="lg:col-span-3" />
       </main>
-    </>
+    </div>
   );
 }
 
