@@ -101,7 +101,7 @@ app.get('/api/communities/sidebar', (req, res) => {
 const clientBuildPath = path.join(__dirname, '../dist');
 if (fs.existsSync(clientBuildPath)) {
     app.use(express.static(clientBuildPath));
-    app.get('*', (req, res) => {
+    app.use((req, res) => {
         res.sendFile(path.join(clientBuildPath, 'index.html'));
     });
 }
