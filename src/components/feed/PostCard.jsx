@@ -38,15 +38,15 @@ const PostCard = ({ post }) => {
                     )}
 
                     <div className="flex items-center gap-4 text-slate-500 text-sm">
-                        <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
+                        <button className="flex items-center gap-1 ios-hover px-2 py-1 rounded transition-colors">
                             <span className="material-symbols-rounded text-lg">chat_bubble</span>
                             {post.comments} Comments
                         </button>
-                        <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
+                        <button className="flex items-center gap-1 ios-hover px-2 py-1 rounded transition-colors">
                             <span className="material-symbols-rounded text-lg">ios_share</span>
                             Share
                         </button>
-                        <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
+                        <button className="flex items-center gap-1 ios-hover px-2 py-1 rounded transition-colors">
                             <span className="material-symbols-rounded text-lg">bookmark</span>
                             Save
                         </button>

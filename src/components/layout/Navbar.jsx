@@ -24,14 +24,14 @@ const Navbar = () => {
 
                 {/* Nav Actions */}
                 <div className="flex items-center gap-2 md:gap-4 shrink-0">
-                    <button className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-primary/10 transition-colors hidden md:flex">
+                    <button className="p-2 rounded-full ios-hover transition-colors hidden md:flex">
                         <span className="material-symbols-rounded">explore</span>
                     </button>
-                    <button className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-primary/10 transition-colors relative">
+                    <button className="p-2 rounded-full ios-hover transition-colors relative">
                         <span className="material-symbols-rounded">notifications</span>
                         <span className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
                     </button>
-                    <button className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-primary/10 transition-colors">
+                    <button className="p-2 rounded-full ios-hover transition-colors">
                         <span className="material-symbols-rounded">chat_bubble</span>
                     </button>
                     <div className="h-8 w-px bg-slate-200 dark:bg-primary/10 mx-1"></div>

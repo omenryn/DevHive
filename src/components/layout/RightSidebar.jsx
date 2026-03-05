@@ -9,7 +9,7 @@ const RightSidebar = ({ className = "" }) => {
                     <h3 className="font-bold">Trending Communities</h3>
                 </div>
                 <div className="p-2">
-                    <div className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-primary/10 rounded-lg cursor-pointer">
+                    <div className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors">
                         <div className="flex items-center gap-3">
                             <span className="font-bold text-slate-400">1</span>
                             <div className="w-8 h-8 rounded-full bg-indigo-500"></div>
@@ -20,7 +20,7 @@ const RightSidebar = ({ className = "" }) => {
                         </div>
                         <button className="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Join</button>
                     </div>
-                    <div className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-primary/10 rounded-lg cursor-pointer">
+                    <div className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors">
                         <div className="flex items-center gap-3">
                             <span className="font-bold text-slate-400">2</span>
                             <div className="w-8 h-8 rounded-full bg-amber-500"></div>
@@ -31,7 +31,7 @@ const RightSidebar = ({ className = "" }) => {
                         </div>
                         <button className="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Join</button>
                     </div>
-                    <div className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-primary/10 rounded-lg cursor-pointer">
+                    <div className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors">
                         <div className="flex items-center gap-3">
                             <span className="font-bold text-slate-400">3</span>
                             <div className="w-8 h-8 rounded-full bg-emerald-500"></div>
