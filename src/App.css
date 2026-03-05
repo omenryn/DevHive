@@ -40,39 +40,57 @@ body {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
-/* Futuristic iOS Hover Effects */
+/* Clean Glass Hover Rebuild (Fixes Shadows & Blur) */
 .ios-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   position: relative;
-  overflow: hidden;
-  will-change: transform, background-color, backdrop-filter;
+  border: 1px solid transparent;
+  /* Hardware acceleration to keep text sharp */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .ios-hover:hover {
-  background-color: rgba(255, 255, 255, 0.45) !important;
-  transform: scale(1.02) translateY(-2px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(35px) saturate(210%);
-  -webkit-backdrop-filter: blur(35px) saturate(210%);
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-2px) translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  /* Light-based glow instead of dark shadow */
+  box-shadow:
+    0 12px 24px -10px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dark .ios-hover:hover {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(166, 154, 250, 0.2) !important;
+  box-shadow:
+    0 12px 30px -10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Subtle Inner Shine Highlight */
+/* Sharp Refractive Top Line */
 .ios-hover::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .ios-hover:hover::after {
@@ -80,7 +98,7 @@ body {
 }
 
 .ios-hover:active {
-  transform: scale(0.96) translateY(0);
+  transform: scale(0.97) translateY(0) translateZ(0);
   transition: transform 0.1s ease;
 }
 
@@ -92,4 +110,57 @@ body {
 .dark .ios-hover-active {
   background-color: rgba(255, 255, 255, 0.15) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Simple Glass Hover (No Lift, No Shine) */
+.ios-hover-simple {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  border-radius: inherit;
+}
+
+.ios-hover-simple:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
+.dark .ios-hover-simple:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* iOS 26 Premium Hover (Lift & Glow, No Shine) */
+.ios-hover-v26 {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid transparent;
+  transform: translateZ(0);
+}
+
+.ios-hover-v26:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-3px) translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    0 15px 30px -10px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.dark .ios-hover-v26:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(166, 154, 250, 0.2) !important;
+  box-shadow:
+    0 15px 35px -10px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.ios-hover-v26:active {
+  transform: scale(0.96) translateY(0) translateZ(0);
 }

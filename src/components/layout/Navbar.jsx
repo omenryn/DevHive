@@ -6,35 +6,35 @@ const Navbar = () => {
             <div className="w-full flex items-center justify-between gap-4">
                 {/* Logo */}
                 <div className="flex items-center gap-3 shrink-0">
-                    <div className="bg-primary p-2 rounded-lg text-background-dark flex items-center justify-center">
+                    <div className="bg-primary w-10 h-10 rounded-xl text-background-dark flex items-center justify-center">
                         <span className="material-symbols-outlined block text-2xl">hive</span>
                     </div>
                     <h1 className="text-xl font-bold tracking-tight hidden sm:block">DevHive</h1>
                 </div>
 
                 {/* Search Bar */}
-                <div className="flex-1 max-w-2xl px-4">
+                <div className="flex-1 max-w-2xl mx-2">
                     <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
                             <span className="material-symbols-rounded">search</span>
                         </div>
-                        <input className="w-full bg-slate-100/50 dark:bg-primary/5 backdrop-blur-sm border border-white/40 dark:border-transparent focus:border-primary focus:ring-0 rounded-full pl-10 pr-4 py-2 text-sm transition-all outline-none" placeholder="Search communities, posts, or developers..." type="text" />
+                        <input className="w-full bg-slate-100/50 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/5 focus:border-primary/50 focus:ring-0 rounded-full pl-11 pr-4 py-2 text-sm transition-all outline-none" placeholder="Search communities, posts, or developers..." type="text" />
                     </div>
                 </div>
 
                 {/* Nav Actions */}
-                <div className="flex items-center gap-2 md:gap-4 shrink-0">
-                    <button className="p-2 rounded-full ios-hover transition-colors hidden md:flex">
+                <div className="flex items-center gap-1 md:gap-2 shrink-0">
+                    <button className="w-10 h-10 flex items-center justify-center rounded-full ios-hover-v26 transition-colors hidden md:flex">
                         <span className="material-symbols-rounded">explore</span>
                     </button>
-                    <button className="p-2 rounded-full ios-hover transition-colors relative">
+                    <button className="w-10 h-10 flex items-center justify-center rounded-full ios-hover-v26 transition-colors relative">
                         <span className="material-symbols-rounded">notifications</span>
-                        <span className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+                        <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border border-white/50 dark:border-black/50"></span>
                     </button>
-                    <button className="p-2 rounded-full ios-hover transition-colors">
+                    <button className="w-10 h-10 flex items-center justify-center rounded-full ios-hover-v26 transition-colors">
                         <span className="material-symbols-rounded">chat_bubble</span>
                     </button>
-                    <div className="h-8 w-px bg-slate-200 dark:bg-primary/10 mx-1"></div>
+                    <div className="h-6 w-px bg-slate-200 dark:bg-white/10 mx-1"></div>
                     <div className="h-10 w-10 rounded-full bg-primary/20 border-2 border-primary/30 flex items-center justify-center overflow-hidden">
                         <img alt="User Profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_T-BjcZSFJJBfBQqLtx-0PGn3TZFFFw6YQ2yKDjYQNQJkoliW1C-gbLjHdQD38F1VWgXPGZ_bmAB-2u5lOODfwiqJMBAZpAtQ7dHouyPeK2WWJIk4C3NW4Qf09Y4_py2lIRkZKi7030R9wGyfhUd03R04_oCxRkZTiGjgxI4ZJeqDln7rfWmPZrDEaJgW8Bv-sL5DHZQokjOG70zVk6tbLV1Ff499Q-9pVaOM6vypHq1p7OFZt6C7uyEBPKtecrmqhLLOw8IGcXD1" />
                     </div>
