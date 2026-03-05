@@ -9,11 +9,11 @@ const PostCard = ({ post }) => {
                 {/* Voting Column */}
                 <div className="w-12 bg-slate-50/30 dark:bg-primary/5 backdrop-blur-sm flex flex-col items-center py-4 gap-1 border-r border-white/20 dark:border-transparent">
                     <button className="text-slate-400 hover:text-primary" onClick={() => setVotes(v => v + 1)}>
-                        <span className="material-symbols-outlined text-3xl leading-none">expand_less</span>
+                        <span className="material-symbols-rounded text-3xl leading-none">keyboard_arrow_up</span>
                     </button>
                     <span className="text-sm font-bold">{votes > 999 ? (votes / 1000).toFixed(1) + 'k' : votes}</span>
                     <button className="text-slate-400 hover:text-red-400" onClick={() => setVotes(v => v - 1)}>
-                        <span className="material-symbols-outlined text-3xl leading-none">expand_more</span>
+                        <span className="material-symbols-rounded text-3xl leading-none">keyboard_arrow_down</span>
                     </button>
                 </div>
                 <div className="flex-1 p-4">
@@ -39,15 +39,15 @@ const PostCard = ({ post }) => {
 
                     <div className="flex items-center gap-4 text-slate-500 text-sm">
                         <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
-                            <span className="material-symbols-outlined text-lg">mode_comment</span>
+                            <span className="material-symbols-rounded text-lg">chat_bubble</span>
                             {post.comments} Comments
                         </button>
                         <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
-                            <span className="material-symbols-outlined text-lg">share</span>
+                            <span className="material-symbols-rounded text-lg">ios_share</span>
                             Share
                         </button>
                         <button className="flex items-center gap-1 hover:bg-slate-100 dark:hover:bg-primary/10 px-2 py-1 rounded">
-                            <span className="material-symbols-outlined text-lg">bookmark</span>
+                            <span className="material-symbols-rounded text-lg">bookmark</span>
                             Save
                         </button>
                     </div>
