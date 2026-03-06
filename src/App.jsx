@@ -95,6 +95,15 @@ const MOCK_POSTS = [
   }
 ];
 
+const MOCK_COMMUNITIES = [
+  { id: 'ma/WebDev_MA', members: '12.4k', posts: '1.2k', color: 'bg-emerald-500/20 text-emerald-500', description: 'The official home for web developers in Morocco. React, Vue, Node, and more!' },
+  { id: 'ma/AI_Morocco', members: '8.2k', posts: '850', color: 'bg-orange-500/20 text-orange-500', description: 'Exploring the future of Artificial Intelligence in the Kingdom. LLMs, Data Science, and ML.' },
+  { id: 'ma/JobHunting', members: '15.1k', posts: '3.4k', color: 'bg-blue-500/20 text-blue-500', description: 'Find your next career move. Remote jobs, local startups, and interview tips.' },
+  { id: 'ma/Frontend', members: '5.6k', posts: '420', color: 'bg-indigo-500/20 text-indigo-500', description: 'Focusing on the beauty of the web. UI/UX, CSS, and modern framework discussions.' },
+  { id: 'ma/Python_MA', members: '4.3k', posts: '310', color: 'bg-amber-500/20 text-amber-500', description: 'The Pythonista community of Morocco. Backend, Automation, and Scripting.' },
+  { id: 'ma/OpenSource', members: '2.9k', posts: '150', color: 'bg-emerald-600/20 text-emerald-600', description: 'Building together. Contribute to Moroccan projects and share your own.' }
+];
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState('feed'); // 'feed', 'trending', 'communities', 'community-detail', 'post-detail'
@@ -140,6 +149,7 @@ function App() {
             setSelectedEntity(comm);
             setActiveTab('community-detail');
           }}
+          communities={MOCK_COMMUNITIES}
         />
 
         <section className="col-span-1 lg:col-span-6 space-y-6">
@@ -161,6 +171,7 @@ function App() {
 
           {activeTab === 'communities' && (
             <CommunitiesView
+              communities={MOCK_COMMUNITIES}
               onCommunityClick={(comm) => {
                 setSelectedEntity(comm);
                 setActiveTab('community-detail');
@@ -185,18 +196,22 @@ function App() {
           {activeTab === 'post-detail' && selectedEntity ? (
             <PostView post={selectedEntity} onBack={() => setActiveTab('feed')} />
           ) : (
-            <div className="space-y-6">
-              {displayedPosts.map(post => (
-                <PostCard
-                  key={post.id}
-                  post={post}
-                  onClick={() => {
-                    setSelectedEntity(post);
-                    setActiveTab('post-detail');
-                  }}
-                />
-              ))}
-            </div>
+            <>
+              {['feed', 'trending', 'community-detail'].includes(activeTab) && (
+                <div className="space-y-6">
+                  {displayedPosts.map(post => (
+                    <PostCard
+                      key={post.id}
+                      post={post}
+                      onClick={() => {
+                        setSelectedEntity(post);
+                        setActiveTab('post-detail');
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </section>
 
@@ -206,6 +221,7 @@ function App() {
             setSelectedEntity(comm);
             setActiveTab('community-detail');
           }}
+          communities={MOCK_COMMUNITIES}
         />
       </main>
     </div>

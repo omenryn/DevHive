@@ -1,37 +1,53 @@
 import React from 'react';
 
-const COMMUNITIES = [
-    { id: 'ma/WebDev_MA', members: '12.4k', color: 'bg-emerald-500/20 text-emerald-500' },
-    { id: 'ma/AI_Morocco', members: '8.2k', color: 'bg-orange-500/20 text-orange-500' },
-    { id: 'ma/JobHunting', members: '15.1k', color: 'bg-blue-500/20 text-blue-500' },
-    { id: 'ma/Frontend', members: '5.6k', color: 'bg-indigo-500/20 text-indigo-500' },
-    { id: 'ma/Python_MA', members: '4.3k', color: 'bg-amber-500/20 text-amber-500' },
-    { id: 'ma/OpenSource', members: '2.9k', color: 'bg-emerald-600/20 text-emerald-600' }
-];
 
-const CommunitiesView = ({ onCommunityClick }) => {
+const CommunitiesView = ({ communities, onCommunityClick }) => {
     return (
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-500">
             <h2 className="text-3xl font-extrabold tracking-tight">Browse Communities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {COMMUNITIES.map(comm => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {communities.map(comm => (
                     <div
                         key={comm.id}
                         onClick={() => onCommunityClick(comm)}
-                        className="ios-glass ios-glass-border ios-glass-shadow p-6 rounded-2xl flex items-center justify-between cursor-pointer ios-hover transition-all"
+                        className="ios-glass ios-glass-border ios-glass-shadow p-5 rounded-[2rem] flex flex-col gap-4 cursor-pointer ios-hover transition-all group border-transparent hover:border-white/40"
                     >
-                        <div className="flex items-center gap-4">
-                            <div className={`w-12 h-12 rounded-xl ${comm.color} flex items-center justify-center text-xl font-bold shadow-sm`}>
-                                {comm.id.split('/')[1][0]}
+                        {/* Header Row */}
+                        <div className="flex items-center justify-between gap-3">
+                            <div className="flex items-center gap-3 overflow-hidden">
+                                <div className={`w-12 h-12 rounded-2xl ${comm.color} flex items-center justify-center text-xl font-bold shadow-lg shrink-0`}>
+                                    {comm.id.split('/')[1][0]}
+                                </div>
+                                <div className="overflow-hidden">
+                                    <h3 className="font-bold text-base truncate leading-tight">{comm.id}</h3>
+                                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Community</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="font-bold text-lg">{comm.id}</h3>
-                                <p className="text-sm text-slate-500">{comm.members} members</p>
+                            <button
+                                onClick={(e) => { e.stopPropagation(); }}
+                                className="bg-primary hover:bg-primary/90 text-background-dark font-black px-5 py-2 rounded-xl text-[11px] shadow-lg shadow-primary/20 shrink-0 transition-all active:scale-90"
+                            >
+                                JOIN
+                            </button>
+                        </div>
+
+                        {/* Stats Row - Centered and clear */}
+                        <div className="flex items-center gap-4 bg-white/30 dark:bg-black/20 py-2 px-4 rounded-2xl w-fit">
+                            <div className="flex flex-col">
+                                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Hivers</span>
+                                <span className="text-sm font-black text-slate-700 dark:text-slate-200">{comm.members}</span>
+                            </div>
+                            <div className="w-px h-6 bg-slate-300 dark:bg-slate-700"></div>
+                            <div className="flex flex-col">
+                                <span className="text-[10px] text-primary font-bold uppercase tracking-tighter">Hives</span>
+                                <span className="text-sm font-black text-slate-700 dark:text-slate-200">{comm.posts}</span>
                             </div>
                         </div>
-                        <button className="bg-primary text-background-dark font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-primary/20">
-                            Join
-                        </button>
+
+                        {/* Description */}
+                        <p className="text-[13px] text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed px-1 font-medium italic">
+                            {comm.description}
+                        </p>
                     </div>
                 ))}
             </div>

@@ -1,59 +1,39 @@
 import React from 'react';
 
-const RightSidebar = ({ className = "", onCommunityClick }) => {
+const RightSidebar = ({ className = "", onCommunityClick, communities = [] }) => {
     return (
         <aside className={`hidden lg:block space-y-6 ${className}`}>
             {/* Popular Communities */}
             <div className="ios-glass ios-glass-border ios-glass-shadow rounded-xl overflow-hidden">
                 <div className="p-4 border-b border-white/40 dark:border-primary/20 bg-primary/5 text-center">
-                    <h3 className="font-bold">Trending Communities</h3>
+                    <h3 className="font-bold text-sm">Trending Communities</h3>
                 </div>
                 <div className="p-2">
-                    <div
-                        onClick={() => onCommunityClick({ id: 'ma/Frontend', color: 'bg-indigo-500' })}
-                        className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors"
-                    >
-                        <div className="flex items-center gap-3">
-                            <span className="font-bold text-slate-400">1</span>
-                            <div className="w-8 h-8 rounded-full bg-indigo-500"></div>
-                            <div>
-                                <p className="text-sm font-bold">ma/Frontend</p>
-                                <p className="text-[10px] text-slate-500">2.4k new today</p>
+                    {communities.slice(3, 6).map((comm, index) => (
+                        <div
+                            key={comm.id}
+                            onClick={() => onCommunityClick(comm)}
+                            className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors"
+                        >
+                            <div className="flex items-center gap-3 overflow-hidden">
+                                <span className="font-bold text-slate-400 shrink-0 w-4">{index + 1}</span>
+                                <div className={`w-8 h-8 rounded-full ${comm.color} shrink-0`}></div>
+                                <div className="overflow-hidden">
+                                    <p className="text-xs font-bold truncate">{comm.id}</p>
+                                    <p className="text-[9px] text-slate-500">{comm.posts} hives today</p>
+                                </div>
                             </div>
+                            <button
+                                onClick={(e) => { e.stopPropagation(); }}
+                                className="bg-primary text-background-dark text-[10px] font-black px-3 py-1.5 rounded-full shrink-0 ml-4 hover:scale-110 transition-transform"
+                            >
+                                JOIN
+                            </button>
                         </div>
-                        <button className="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Join</button>
-                    </div>
-                    <div
-                        onClick={() => onCommunityClick({ id: 'ma/Python_MA', color: 'bg-amber-500' })}
-                        className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors"
-                    >
-                        <div className="flex items-center gap-3">
-                            <span className="font-bold text-slate-400">2</span>
-                            <div className="w-8 h-8 rounded-full bg-amber-500"></div>
-                            <div>
-                                <p className="text-sm font-bold">ma/Python_MA</p>
-                                <p className="text-[10px] text-slate-500">1.8k new today</p>
-                            </div>
-                        </div>
-                        <button className="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Join</button>
-                    </div>
-                    <div
-                        onClick={() => onCommunityClick({ id: 'ma/OpenSource', color: 'bg-emerald-500' })}
-                        className="flex items-center justify-between p-2 ios-hover rounded-lg cursor-pointer transition-colors"
-                    >
-                        <div className="flex items-center gap-3">
-                            <span className="font-bold text-slate-400">3</span>
-                            <div className="w-8 h-8 rounded-full bg-emerald-500"></div>
-                            <div>
-                                <p className="text-sm font-bold">ma/OpenSource</p>
-                                <p className="text-[10px] text-slate-500">900 new today</p>
-                            </div>
-                        </div>
-                        <button className="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Join</button>
-                    </div>
+                    ))}
                 </div>
                 <div className="p-3 text-center">
-                    <button className="text-sm font-bold text-primary hover:underline">View All</button>
+                    <button className="text-xs font-bold text-primary hover:underline">View All</button>
                 </div>
             </div>
 
