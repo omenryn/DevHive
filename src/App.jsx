@@ -5,6 +5,8 @@ import Sidebar from './components/layout/Sidebar';
 import RightSidebar from './components/layout/RightSidebar';
 import PostCard from './components/feed/PostCard';
 import LandingPage from './components/auth/LandingPage';
+import PostView from './components/feed/PostView';
+import CommunitiesView from './components/feed/CommunitiesView';
 
 const MOCK_POSTS = [
   {
@@ -95,17 +97,22 @@ const MOCK_POSTS = [
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeTab, setActiveTab] = useState('feed');
+  const [activeTab, setActiveTab] = useState('feed'); // 'feed', 'trending', 'communities', 'community-detail', 'post-detail'
+  const [selectedEntity, setSelectedEntity] = useState(null);
 
   if (!isLoggedIn) {
     return <LandingPage onLogin={() => setIsLoggedIn(true)} />;
   }
 
   const getFilteredPosts = () => {
+    let posts = [...MOCK_POSTS];
     if (activeTab === 'trending') {
-      return [...MOCK_POSTS].sort((a, b) => b.votes - a.votes);
+      return posts.sort((a, b) => b.votes - a.votes);
     }
-    return MOCK_POSTS; // Default "Home" feed
+    if (activeTab === 'community-detail' && selectedEntity) {
+      return posts.filter(p => p.tag === selectedEntity.id);
+    }
+    return posts;
   };
 
   const displayedPosts = getFilteredPosts();
@@ -125,7 +132,14 @@ function App() {
         <Sidebar
           className="lg:col-span-3"
           activeTab={activeTab}
-          setActiveTab={setActiveTab}
+          setActiveTab={(tab) => {
+            setActiveTab(tab);
+            setSelectedEntity(null);
+          }}
+          onCommunityClick={(comm) => {
+            setSelectedEntity(comm);
+            setActiveTab('community-detail');
+          }}
         />
 
         <section className="col-span-1 lg:col-span-6 space-y-6">
@@ -145,12 +159,54 @@ function App() {
             </div>
           )}
 
-          {displayedPosts.map(post => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          {activeTab === 'communities' && (
+            <CommunitiesView
+              onCommunityClick={(comm) => {
+                setSelectedEntity(comm);
+                setActiveTab('community-detail');
+              }}
+            />
+          )}
+
+          {activeTab === 'community-detail' && selectedEntity && (
+            <div className="ios-glass ios-glass-border p-6 rounded-xl animate-in fade-in duration-500">
+              <div className="flex items-center gap-4 mb-4">
+                <div className={`w-16 h-16 rounded-2xl ${selectedEntity.color} flex items-center justify-center text-2xl font-bold shadow-lg`}>
+                  {selectedEntity.id.split('/')[1][0]}
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold">{selectedEntity.id}</h2>
+                  <p className="text-sm text-slate-500">Official community for Moroccan {selectedEntity.id.split('/')[1]}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'post-detail' && selectedEntity ? (
+            <PostView post={selectedEntity} onBack={() => setActiveTab('feed')} />
+          ) : (
+            <div className="space-y-6">
+              {displayedPosts.map(post => (
+                <PostCard
+                  key={post.id}
+                  post={post}
+                  onClick={() => {
+                    setSelectedEntity(post);
+                    setActiveTab('post-detail');
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </section>
 
-        <RightSidebar className="lg:col-span-3" />
+        <RightSidebar
+          className="lg:col-span-3"
+          onCommunityClick={(comm) => {
+            setSelectedEntity(comm);
+            setActiveTab('community-detail');
+          }}
+        />
       </main>
     </div>
   );

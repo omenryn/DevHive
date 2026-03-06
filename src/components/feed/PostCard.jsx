@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, onClick }) => {
     const [votes, setVotes] = useState(post.votes);
 
     return (
-        <article className="ios-glass ios-glass-border ios-glass-shadow rounded-xl overflow-hidden">
+        <article
+            onClick={onClick}
+            className="ios-glass ios-glass-border ios-glass-shadow rounded-xl overflow-hidden cursor-pointer hover:ios-glass-shadow transition-all duration-300 transform active:scale-[0.99]"
+        >
             <div className="flex">
                 {/* Voting Column */}
                 <div className="w-12 bg-slate-50/30 dark:bg-primary/5 backdrop-blur-sm flex flex-col items-center py-4 gap-1 border-r border-white/20 dark:border-transparent">
