@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import RightSidebar from './components/layout/RightSidebar';
 import PostCard from './components/feed/PostCard';
+import LandingPage from './components/auth/LandingPage';
 
 const MOCK_POSTS = [
   {
@@ -93,7 +94,12 @@ const MOCK_POSTS = [
 ];
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState('feed');
+
+  if (!isLoggedIn) {
+    return <LandingPage onLogin={() => setIsLoggedIn(true)} />;
+  }
 
   const getFilteredPosts = () => {
     if (activeTab === 'trending') {
