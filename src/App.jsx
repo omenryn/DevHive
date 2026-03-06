@@ -180,15 +180,39 @@ function App() {
           )}
 
           {activeTab === 'community-detail' && selectedEntity && (
-            <div className="ios-glass ios-glass-border p-6 rounded-xl animate-in fade-in duration-500">
-              <div className="flex items-center gap-4 mb-4">
-                <div className={`w-16 h-16 rounded-2xl ${selectedEntity.color} flex items-center justify-center text-2xl font-bold shadow-lg`}>
-                  {selectedEntity.id.split('/')[1][0]}
+            <div className="ios-glass ios-glass-border p-8 rounded-[2.5rem] animate-in fade-in duration-500 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="flex items-center gap-6">
+                  <div className={`w-20 h-20 rounded-3xl ${selectedEntity.color} flex items-center justify-center text-3xl font-bold shadow-2xl`}>
+                    {selectedEntity.id.split('/')[1][0]}
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-black tracking-tight">{selectedEntity.id}</h2>
+                    <p className="text-sm font-bold text-slate-500 uppercase tracking-[0.2em] mt-1 opacity-70">Official Hive</p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-bold">{selectedEntity.id}</h2>
-                  <p className="text-sm text-slate-500">Official community for Moroccan {selectedEntity.id.split('/')[1]}</p>
+
+                <div className="flex items-center gap-6 bg-white/30 dark:bg-black/20 py-3 px-6 rounded-3xl w-fit">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Hivers</span>
+                    <span className="text-lg font-black text-slate-800 dark:text-slate-100">{selectedEntity.members}</span>
+                  </div>
+                  <div className="w-px h-8 bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-primary font-bold uppercase tracking-widest">Hives</span>
+                    <span className="text-lg font-black text-slate-800 dark:text-slate-100">{selectedEntity.posts}</span>
+                  </div>
                 </div>
+
+                <button className="bg-primary hover:bg-primary/90 text-background-dark font-black px-8 py-3 rounded-2xl text-sm shadow-xl shadow-primary/20 transition-all active:scale-95">
+                  JOIN HIVE
+                </button>
+              </div>
+
+              <div className="max-w-2xl">
+                <p className="text-lg text-slate-600 dark:text-slate-300 font-medium italic leading-relaxed">
+                  "{selectedEntity.description}"
+                </p>
               </div>
             </div>
           )}
