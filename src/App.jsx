@@ -180,39 +180,41 @@ function App() {
           )}
 
           {activeTab === 'community-detail' && selectedEntity && (
-            <div className="ios-glass ios-glass-border p-8 rounded-[2.5rem] animate-in fade-in duration-500 space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="flex items-center gap-6">
-                  <div className={`w-20 h-20 rounded-3xl ${selectedEntity.color} flex items-center justify-center text-3xl font-bold shadow-2xl`}>
-                    {selectedEntity.id.split('/')[1][0]}
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-black tracking-tight">{selectedEntity.id}</h2>
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-[0.2em] mt-1 opacity-70">Official Hive</p>
-                  </div>
+            <div className="ios-glass ios-glass-border p-8 rounded-[2.5rem] animate-in fade-in duration-500 flex flex-col gap-6">
+              {/* Header: Icon & Title */}
+              <div className="flex items-center gap-6">
+                <div className={`w-24 h-24 rounded-[1.5rem] ${selectedEntity.color} flex items-center justify-center text-4xl font-bold shadow-2xl shrink-0`}>
+                  {selectedEntity.id.split('/')[1][0]}
                 </div>
-
-                <div className="flex items-center gap-6 bg-white/30 dark:bg-black/20 py-3 px-6 rounded-3xl w-fit">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Hivers</span>
-                    <span className="text-lg font-black text-slate-800 dark:text-slate-100">{selectedEntity.members}</span>
-                  </div>
-                  <div className="w-px h-8 bg-slate-300 dark:bg-slate-700"></div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-primary font-bold uppercase tracking-widest">Hives</span>
-                    <span className="text-lg font-black text-slate-800 dark:text-slate-100">{selectedEntity.posts}</span>
-                  </div>
+                <div>
+                  <h2 className="text-4xl font-black tracking-tight leading-none">{selectedEntity.id}</h2>
+                  <p className="text-sm font-bold text-slate-500 uppercase tracking-[0.3em] mt-3 opacity-60">Verified Official Hive</p>
                 </div>
-
-                <button className="bg-primary hover:bg-primary/90 text-background-dark font-black px-8 py-3 rounded-2xl text-sm shadow-xl shadow-primary/20 transition-all active:scale-95">
-                  JOIN HIVE
-                </button>
               </div>
 
-              <div className="max-w-2xl">
+              {/* Bio */}
+              <div className="max-w-3xl pr-4">
                 <p className="text-lg text-slate-600 dark:text-slate-300 font-medium italic leading-relaxed">
                   "{selectedEntity.description}"
                 </p>
+              </div>
+
+              {/* Footer Stats & Button Area */}
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-white/20 dark:border-white/5">
+                <div className="flex items-center gap-10">
+                  <div className="flex flex-col">
+                    <span className="text-[11px] text-slate-500 font-black uppercase tracking-widest opacity-60">Active Hivers</span>
+                    <span className="text-2xl font-black text-slate-800 dark:text-slate-100">{selectedEntity.members}</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[11px] text-primary font-black uppercase tracking-widest">Total Hives</span>
+                    <span className="text-2xl font-black text-slate-800 dark:text-slate-100">{selectedEntity.posts}</span>
+                  </div>
+                </div>
+
+                <button className="bg-primary hover:bg-primary/90 text-background-dark font-black px-12 py-4 rounded-2xl text-base shadow-2xl shadow-primary/30 transition-all active:scale-95 hover:shadow-primary/50">
+                  JOIN HIVE
+                </button>
               </div>
             </div>
           )}
