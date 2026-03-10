@@ -36,7 +36,7 @@ The goal is to build a **central place where the Moroccan dev community can lear
 
 ---
 
-## 📌 Future Plans
+## 📌 Future Plans 
 
 * Authentication and user accounts
 * Real-time notifications
